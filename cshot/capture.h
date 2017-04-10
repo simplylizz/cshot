@@ -18,9 +18,6 @@
 - (void) captureOutput: (AVCaptureOutput*) output
  didOutputSampleBuffer: (CMSampleBufferRef) buffer
         fromConnection: (AVCaptureConnection*) connection;
-//- (void) captureOutput: (AVCaptureOutput*) output
-//   didDropSampleBuffer: (CMSampleBufferRef) buffer
-//        fromConnection: (AVCaptureConnection*) connection;
 @end
 @interface Capture ()
 {

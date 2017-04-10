@@ -67,7 +67,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSLog(@"Hi there!!");
+        NSLog(@"Starting program...");
 
         // NOTE: without variable program is failing with exception... maybe there is some optimizations?
         LockWatcher *lw = [[LockWatcher alloc]init];
