@@ -13,6 +13,7 @@
 @interface LockWatcher : NSObject
 - (id) init;
 - (void)screenUnlocked;
+
 @end
 
 
@@ -24,12 +25,11 @@
                    name:@"com.apple.screenIsUnlocked"
                  object:nil
      ];
-
     return self;
 }
 
 - (void)screenUnlocked {
-    NSLog(@"Screen is unlocked!");
+    NSLog(@"Screen unlocked!");
 
     // Below is copy-paste from https://gist.github.com/bellbind/6954679
     NSError* error = nil;
@@ -75,7 +75,6 @@ int main(int argc, const char * argv[]) {
 
         [[NSRunLoop currentRunLoop] run];
 
-        NSLog(@"How ar u?");
     }
     return 0;
 }
