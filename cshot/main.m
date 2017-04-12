@@ -25,19 +25,17 @@
                    name:@"com.apple.screenIsUnlocked"
                  object:nil
      ];
+    NSLog(@"Listener set");
     return self;
 }
 
 - (void)screenUnlocked {
-    NSLog(@"Screen unlocked!");
+    NSLog(@"Screen unlocked");
 
     // Below is copy-paste from https://gist.github.com/bellbind/6954679
     NSError* error = nil;
     Capture* capture = [[Capture alloc] init];
 
-    //NSArray* devices =
-    //  [AVCaptureDevice devicesWithMediaType: AVMediaTypeVideo];
-    //AVCaptureDevice* device = [devices objectAtIndex: 0];
     AVCaptureDevice* device =
     [AVCaptureDevice defaultDeviceWithMediaType: AVMediaTypeVideo];
     NSLog(@"[device] %@", device);
@@ -59,7 +57,6 @@
     [session startRunning];
     NSLog(@"Started");
     CFRunLoopRun();
-
     NSLog(@"Stopped");
 }
 @end
@@ -67,10 +64,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSLog(@"Starting program...");
-
-        // NOTE: without variable program is failing with exception... maybe there is some optimizations?
-        LockWatcher *lw = [[LockWatcher alloc]init];
+        // NOTE: without variable program is failing with exception... maybe there is some optimizations? (ARC?)
+        LockWatcher* lw = [[LockWatcher alloc]init];
         #pragma unused(lw)
 
         [[NSRunLoop currentRunLoop] run];
